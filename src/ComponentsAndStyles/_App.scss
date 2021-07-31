@@ -1,0 +1,5 @@
+@use '../ComponentsAndStyles/constants' as *;
+.App {
+  background-color: $color-quaternary-d;
+  min-height: 100vh;
+}
