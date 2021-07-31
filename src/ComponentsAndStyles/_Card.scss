@@ -1,7 +1,7 @@
 @use './constants' as *;
 
 .Card {
-  background-color: $color-secondary-b;
+  background-color: $color-secondary-c;
   grid-column: 2/3;
   min-height: 33vh;
   border-radius: 25px;
@@ -16,7 +16,8 @@
   margin: 2rem 0;
 
   h2 {
-    animation: aparece 1s ease-in-out;
+    animation: aparece 0.5s ease-in-out;
+    font-size: $font-size-2;
   }
 
   button {

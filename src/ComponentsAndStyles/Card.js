@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Card() {
+  let [texto, setTexto] = useState("Click to get quotes");
+
+  async function getQuote() {
+    let chuckurl = "https://api.chucknorris.io/jokes/random";
+    let res = await fetch(chuckurl);
+    let resp = await res.json();
+    setTexto(resp.value);
+  }
+
   return (
     <div className="Card">
-      <h2 key={Math.random()}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-        cupiditate repellat ad saepe voluptatem tempora velit quis expedita esse
-        sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-        cupiditate repellat ad saepe voluptatem tempora velit quis expedita esse
-        sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-        cupiditate repellat ad saepe voluptatem tempora velit quis expedita esse
-        sunt!
-      </h2>
-      <button>
-        <h4>Aperte para mais quotes</h4>
+      <h2 key={Math.random()}>{texto}</h2>
+      <button onClick={getQuote}>
+        <h4>Click</h4>
       </button>
     </div>
   );
