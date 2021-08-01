@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 export default function Card() {
   let [texto, setTexto] = useState("Click to get quotes");
